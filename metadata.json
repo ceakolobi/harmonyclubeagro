@@ -1,0 +1,6 @@
+{
+  "name": "Harmony Clube - Proteção Veicular e Benefícios",
+  "description": "Plataforma oficial da Harmony Clube de Benefícios. Proteção patrimonial mutualista, assistência 24 horas, socorro na estrada e transparência regulatória perante a SUSEP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
