@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PageRoute } from '../types';
 import { BENEFITS } from '../data/harmonyData';
-import { openWhatsApp, trackEvent } from '../services/analytics';
+import { openEmilyChat } from '../services/emily';
 import { Sparkles, ClockAlert, Truck, Wrench, Disc, Key, Fuel, Radio, Home, Calculator, CheckCircle2, Search, ArrowRight } from 'lucide-react';
 
 interface BeneficiosPageProps {
@@ -130,7 +130,7 @@ export const BeneficiosPage: React.FC<BeneficiosPageProps> = ({ onNavigate }) =>
               {/* Action CTA */}
               <div className="p-6 pt-0">
                 <button
-                  onClick={() => onNavigate('cotacao')}
+                  onClick={() => openEmilyChat("Quero fazer uma cotação")}
                   className="w-full py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs shadow-md shadow-orange-500/20 transition-all flex items-center justify-center gap-2"
                 >
                   <Calculator className="w-4 h-4" />
@@ -148,10 +148,10 @@ export const BeneficiosPage: React.FC<BeneficiosPageProps> = ({ onNavigate }) =>
         <div className="bg-slate-900 rounded-3xl p-8 text-center space-y-4 border border-slate-800 text-white">
           <h2 className="text-2xl font-bold font-display">Precisa de um Plano Sob Medida?</h2>
           <p className="text-slate-300 text-xs max-w-lg mx-auto">
-            Consulte nossos especialistas pelo WhatsApp para ver os limites de reboque e adicionais ideais para seu veículo.
+            Converse com a Emily para ver os limites de reboque e adicionais ideais para seu veículo.
           </p>
           <button
-            onClick={() => openWhatsApp("Olá! Gostaria de entender mais sobre os benefícios e condições da Harmony.")}
+            onClick={() => openEmilyChat()}
             className="px-6 py-3 rounded-xl font-bold text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all inline-flex items-center gap-2"
           >
             FALAR COM ATENDIMENTO AGORA

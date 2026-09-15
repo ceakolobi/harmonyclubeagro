@@ -9,7 +9,10 @@ type AnalyticsEvent =
   | 'assistance_click'
   | 'form_submit'
   | 'page_view'
-  | 'susep_click';
+  | 'susep_click'
+  | 'emily_open'
+  | 'emily_message'
+  | 'emily_error';
 
 export function trackEvent(eventName: AnalyticsEvent, params?: Record<string, any>) {
   try {

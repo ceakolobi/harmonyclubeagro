@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageRoute } from '../types';
 import { CONFIG } from '../config';
+import { openEmilyChat } from '../services/emily';
 import { ShieldCheck, CheckCircle2, Users, FileCheck, Lock, Calculator, ArrowRight, ShieldAlert, Award } from 'lucide-react';
 
 interface ProtecaoPageProps {
@@ -29,7 +30,7 @@ export const ProtecaoPage: React.FC<ProtecaoPageProps> = ({ onNavigate }) => {
 
           <div className="pt-2 flex flex-wrap gap-4">
             <button
-              onClick={() => onNavigate('cotacao')}
+              onClick={() => openEmilyChat("Quero fazer uma cotação")}
               className="px-6 py-3.5 rounded-xl font-extrabold text-xs tracking-wider uppercase text-white bg-orange-500 hover:bg-orange-600 shadow-lg shadow-orange-500/30 transition-all flex items-center gap-2"
             >
               <Calculator className="w-4 h-4" />
@@ -145,7 +146,7 @@ export const ProtecaoPage: React.FC<ProtecaoPageProps> = ({ onNavigate }) => {
             Conheça as condições para a sua categoria e receba o atendimento humanizado da equipe Harmony.
           </p>
           <button
-            onClick={() => onNavigate('cotacao')}
+            onClick={() => openEmilyChat("Quero fazer uma cotação")}
             className="px-8 py-4 rounded-xl font-extrabold text-sm text-white bg-orange-500 hover:bg-orange-600 shadow-xl shadow-orange-500/30 transition-all inline-flex items-center gap-2"
           >
             FAZER MINHA COTAÇÃO AGORA

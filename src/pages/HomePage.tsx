@@ -4,7 +4,8 @@ import { FAQAccordion } from '../components/FAQAccordion';
 import { BENEFITS, EVENTS_ARTICLES } from '../data/harmonyData';
 import { PageRoute } from '../types';
 import { CONFIG } from '../config';
-import { openWhatsApp, trackEvent } from '../services/analytics';
+import { trackEvent } from '../services/analytics';
+import { openEmilyChat } from '../services/emily';
 import { 
   ShieldCheck, 
   ClockAlert, 
@@ -264,7 +265,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
           <div className="text-center pt-4">
             <button
-              onClick={() => onNavigate('cotacao')}
+              onClick={() => openEmilyChat("Quero fazer uma cotação")}
               className="px-8 py-4 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/25 transition-all transform hover:scale-105 inline-flex items-center gap-2"
             >
               <Calculator className="w-5 h-5" />
@@ -306,7 +307,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Proteção contra terceiros</li>
               </ul>
               <button
-                onClick={() => onNavigate('cotacao')}
+                onClick={() => openEmilyChat("Quero cotar um carro")}
                 className="w-full py-3 rounded-xl bg-orange-500 text-white font-bold text-xs hover:bg-orange-600 transition-colors"
               >
                 COTAR CARRO
@@ -330,7 +331,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Cobertura para furto e roubo</li>
               </ul>
               <button
-                onClick={() => onNavigate('cotacao')}
+                onClick={() => openEmilyChat("Quero cotar uma moto")}
                 className="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-colors"
               >
                 COTAR MOTO
@@ -354,7 +355,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Cobertura em todo país</li>
               </ul>
               <button
-                onClick={() => onNavigate('cotacao')}
+                onClick={() => openEmilyChat("Quero cotar uma caminhonete")}
                 className="w-full py-3 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 transition-colors"
               >
                 COTAR CAMINHONETE
@@ -500,12 +501,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Faça sua cotação sem compromisso em menos de 1 minuto ou fale diretamente com nossos atendentes pelo WhatsApp.
+            Faça sua cotação sem compromisso em menos de 1 minuto conversando com a Emily, nossa consultora virtual.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
-              onClick={() => onNavigate('cotacao')}
+              onClick={() => openEmilyChat("Quero fazer uma cotação")}
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-xl shadow-orange-500/30 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
             >
               <Calculator className="w-5 h-5" />
@@ -513,10 +514,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </button>
 
             <button
-              onClick={() => openWhatsApp("Olá! Quero cotar a proteção veicular da Harmony.")}
+              onClick={() => openEmilyChat()}
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all flex items-center justify-center gap-2"
             >
-              FALAR NO WHATSAPP
+              FALAR COM A EMILY
             </button>
           </div>
         </div>

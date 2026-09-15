@@ -28,6 +28,8 @@ export interface HarmonyConfig {
   PORTAL_ASSOCIADO_URL: string;
   API_URL: string;
   FIPE_API_URL: string;
+  EMILY_CHAT_URL: string;
+  EMILY_ANON_KEY: string;
   GA_ID: string;
   GTM_ID: string;
   META_PIXEL_ID: string;
@@ -67,6 +69,11 @@ export const CONFIG: HarmonyConfig = {
   PORTAL_ASSOCIADO_URL: "https://harmonyagro.com.br/auth",
   API_URL: "https://api.harmonyclube.com.br",
   FIPE_API_URL: "https://parallelum.com.br/fipe/api/v1",
+  // Edge Function "emily-chat" (Supabase harmony-prod-rw), contexto "public".
+  // Chave abaixo é a publishable/anon key do projeto — segura para uso client-side,
+  // protegida por RLS/lógica da função, não é um segredo.
+  EMILY_CHAT_URL: "https://sfobrbxzdbgjoxgjerus.supabase.co/functions/v1/emily-chat",
+  EMILY_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmb2JyYnh6ZGJnam94Z2plcnVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzNDQ0NDksImV4cCI6MjA5NzkyMDQ0OX0.5x-dBbG2WMStZpDt2LE6JwDfOLFKGGgwvKSdqJAlP7g",
   GA_ID: "", // Configurar conforme Google Analytics oficial
   GTM_ID: "", // Configurar conforme Google Tag Manager oficial
   META_PIXEL_ID: "", // Configurar conforme Meta Pixel oficial

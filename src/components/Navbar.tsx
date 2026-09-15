@@ -3,7 +3,8 @@ import { HarmonyLogo } from './HarmonyLogo';
 import { ThemeToggle } from './ThemeToggle';
 import { PageRoute } from '../types';
 import { CONFIG } from '../config';
-import { openWhatsApp, trackEvent } from '../services/analytics';
+import { trackEvent } from '../services/analytics';
+import { openEmilyChat } from '../services/emily';
 import { Phone, PhoneCall, Menu, X, ShieldAlert, ArrowRight, Calculator, MessageSquare } from 'lucide-react';
 
 interface NavbarProps {
@@ -113,10 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <ThemeToggle />
 
             <button
-              onClick={() => {
-                trackEvent('whatsapp_click', { origin: 'navbar' });
-                openWhatsApp("Olá! Gostaria de falar com o atendimento da Harmony Clube.");
-              }}
+              onClick={() => openEmilyChat()}
               className="px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all flex items-center gap-2"
             >
               <MessageSquare className="w-4 h-4 text-emerald-400" />
@@ -124,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             </button>
 
             <button
-              onClick={() => handleNavClick('cotacao')}
+              onClick={() => openEmilyChat("Quero fazer uma cotação")}
               className="px-4 py-2.5 rounded-xl text-xs font-extrabold text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-500/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
             >
               <Calculator className="w-4 h-4" />
@@ -173,7 +171,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
             <div className="pt-2 space-y-3">
               <button
-                onClick={() => handleNavClick('cotacao')}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openEmilyChat("Quero fazer uma cotação");
+                }}
                 className="w-full py-3.5 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-orange-500 to-orange-600 shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2"
               >
                 <Calculator className="w-5 h-5" />
@@ -183,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  openWhatsApp("Olá! Gostaria de falar com o atendimento da Harmony.");
+                  openEmilyChat();
                 }}
                 className="w-full py-3.5 rounded-xl font-bold text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center gap-2"
               >

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PageRoute } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { WhatsAppButton } from './components/WhatsAppButton';
+import { EmilyChat } from './components/EmilyChat';
 import { JsonLd } from './components/JsonLd';
 
 import { HomePage } from './pages/HomePage';
@@ -101,8 +101,8 @@ export const App: React.FC = () => {
       {/* Persistent Footer */}
       <Footer onNavigate={handleNavigate} />
 
-      {/* Floating 24h WhatsApp Action Button */}
-      <WhatsAppButton />
+      {/* Widget da Emily — assistente virtual da Harmony */}
+      <EmilyChat />
 
     </div>
   );
