@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Column 1: Harmony Overview */}
           <div className="space-y-4">
-            <HarmonyLogo size="md" isDark={true} />
+            <HarmonyLogo size="md" isDark={false} />
             <p className="text-xs text-slate-400 leading-relaxed">
               Associação de proteção veicular, socorro mútuo e benefícios. Estrutura de atendimento com assistência 24 horas, guincho e serviços de proteção patrimonial mutualista em todo o Brasil.
             </p>

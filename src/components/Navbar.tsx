@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
           <div onClick={() => handleNavClick('home')} className="cursor-pointer">
-            <HarmonyLogo size="md" isDark={true} />
+            <HarmonyLogo size="md" isDark={false} />
           </div>
 
           {/* Desktop Navigation Links */}
