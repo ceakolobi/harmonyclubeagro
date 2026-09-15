@@ -58,8 +58,13 @@ export const CONFIG: HarmonyConfig = {
     linkedin: "https://linkedin.com/company/harmonyclube",
     youtube: "https://youtube.com/@harmonyclube"
   },
-  CRM_URL: "https://app.harmonyclube.com.br/crm",
-  PORTAL_ASSOCIADO_URL: "https://associado.harmonyclube.com.br",
+  // Sistema interno de gestão da associação (login de associados, consultores e admin).
+  // Roda no VPS via EasyPanel, repo painelharmonyagrocombr-6e9e5f71.
+  // NÃO usar harmonyclube.com.br/auth: esse domínio é servido pelo Worker
+  // harmony-router, que só repassa /auth pro VPS — os /assets/* do painel caem
+  // no Cloudflare Pages e a tela fica branca.
+  CRM_URL: "https://harmonyagro.com.br/auth",
+  PORTAL_ASSOCIADO_URL: "https://harmonyagro.com.br/auth",
   API_URL: "https://api.harmonyclube.com.br",
   FIPE_API_URL: "https://parallelum.com.br/fipe/api/v1",
   GA_ID: "", // Configurar conforme Google Analytics oficial
